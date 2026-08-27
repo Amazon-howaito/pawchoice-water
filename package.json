@@ -1,0 +1,30 @@
+{
+  "name": "pawchoice-water",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "validate:data": "tsx scripts/validate-products.ts",
+    "validate:out": "tsx scripts/validate-output.ts",
+    "test": "npm run lint && npm run typecheck && npm run validate:data && npm run build && npm run validate:out"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}

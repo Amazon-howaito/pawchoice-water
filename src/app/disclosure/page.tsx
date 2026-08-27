@@ -1,0 +1,1 @@
+import type{Metadata}from"next";export const metadata:Metadata={title:"広告・情報開示",alternates:{canonical:"/disclosure"}};export default function Page(){return <main className="section narrow rich"><h1>広告・情報開示</h1><p>現在、ASIN、affiliate URL、partner tagは未設定です。購入ボタンやアフィリエイトリンクは生成していません。</p><p>将来Amazon、楽天市場、Yahoo!ショッピングの広告リンクを掲載する場合は、販売者・商品識別子・設定状態を確認し、広告であることを明示します。</p></main>}

@@ -1,0 +1,1 @@
+import type{Metadata}from"next";export const metadata:Metadata={title:"プライバシー",alternates:{canonical:"/privacy"}};export default function Page(){return <main className="section narrow rich"><h1>プライバシー</h1><p>本サイトの初期実装では、会員登録、問い合わせフォーム、広告計測、アクセス解析を設定していません。将来導入する場合は、取得情報と利用目的を公開前に更新します。</p></main>}

@@ -1,0 +1,10 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ProductExplorer } from "@/components/product-explorer";
+import { JsonLd } from "@/components/json-ld";
+import { conditions } from "@/data/conditions";
+import { absoluteUrl } from "@/lib/site";
+
+export const metadata: Metadata = { title:"循環式ペット給水器9商品を条件別に比較", description:"猫・犬向け循環式ペット給水器9商品を、容量、電源、材質、コードレス性、アプリなど確認済み仕様で比較。", alternates:{canonical:"/water-fountains"}, openGraph:{url:"/water-fountains",title:"循環式ペット給水器9商品を条件別に比較",description:"未確認と公式情報相違を分けて比較します。"} };
+
+export default function WaterFountainsPage(){return <main><JsonLd data={{"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"トップ",item:absoluteUrl("/")},{"@type":"ListItem",position:2,name:"循環式ペット給水器",item:absoluteUrl("/water-fountains")}]}}/><section className="page-hero"><div className="container"><p className="eyebrow">SPECIFICATION FIRST</p><h1>循環式ペット給水器を、条件別に比較</h1><p className="lede">循環式やフィルター式でも、水交換や清掃が不要になるわけではありません。容量、電源、洗う部品、消耗品、電源断時の順で確認しましょう。</p></div></section><section className="section"><div className="container"><ProductExplorer/></div></section><section className="section"><div className="container"><div className="section-heading"><div><p className="eyebrow">BY CONDITION</p><h2>条件別に探す</h2></div></div><div className="condition-grid">{conditions.map((condition)=><Link className="condition-card" key={condition.slug} href={`/water-fountains/${condition.slug}`}><p className="eyebrow">{condition.status==="active"?"仕様から抽出":"評価準備中"}</p><h3>{condition.title}</h3><p>{condition.summary}</p><span>判定基準を見る →</span></Link>)}</div></div></section><section className="section"><div className="narrow rich"><h2>おすすめの選び方</h2><ol><li><strong>対象と容量：</strong>公式対象を確認し、補充頻度や複数の水飲み場も考えます。</li><li><strong>電源：</strong>完全コードレスとワイヤレスポンプを区別します。</li><li><strong>お手入れ：</strong>洗浄可能部品とポンプ清掃を確認します。</li><li><strong>消耗品：</strong>適合フィルターと交換目安を型番単位で確認します。</li><li><strong>電源断：</strong>残水やバッテリー運転を確認し、予備の置き水も検討します。</li></ol><Link className="cta" href="/water-fountains/guide">選び方を詳しく読む</Link></div></section></main>}

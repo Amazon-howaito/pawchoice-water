@@ -1,0 +1,1 @@
+import type{Metadata}from"next";export const metadata:Metadata={title:"運営方針",alternates:{canonical:"/about"}};export default function Page(){return <main className="section narrow rich"><h1>運営方針</h1><p>PawChoiceは、ペット用品の一次情報に基づく仕様比較を提供します。未確認値を推測せず、仕様評価と実機が必要な編集者評価を分けます。</p><p>給水器カテゴリでは、留守番中の水分環境を考えるための情報を扱います。医療上の診断や健康効果の保証は行いません。</p></main>}
