@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { OPEN_GRAPH_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ja" data-scroll-behavior="smooth"><body><SiteHeader />{children}<footer className="site-footer"><nav><a href="/about">運営方針</a><a href="/privacy">プライバシー</a><a href="/disclosure">広告・情報開示</a></nav><p>掲載仕様は2026-08-27確認。価格・在庫は変動します。健康上の不安は獣医師へご相談ください。</p></footer></body></html>;
+  return <html lang="ja" data-scroll-behavior="smooth"><body><SiteHeader />{children}<SiteFooter /></body></html>;
 }
