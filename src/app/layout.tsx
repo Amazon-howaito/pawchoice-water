@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ja" data-scroll-behavior="smooth"><body><SiteHeader />{children}<SiteFooter /></body></html>;
+  return <html lang="ja" data-scroll-behavior="smooth"><body><SiteHeader />{children}<SiteFooter /></body><Script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"2aa3a9100e2943ae84745294c75027c3"}' strategy="afterInteractive" /></html>;
 }
