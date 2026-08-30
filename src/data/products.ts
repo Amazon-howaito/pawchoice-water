@@ -1,7 +1,24 @@
 import { conflict, source, unknown, verified } from "@/lib/verified";
+import { amazonProductUrl } from "@/lib/commerce";
 import type { CommerceLink, WaterFountainProduct } from "@/types/product";
 
-const commerceLinks = (): [CommerceLink, CommerceLink, CommerceLink] => (["amazon", "rakuten", "yahoo"] as const).map((merchant) => ({ merchant, productId: null, destinationUrl: null, affiliateUrl: null, sellerVerified: null, status: "pending", checkedAt: null })) as [CommerceLink, CommerceLink, CommerceLink];
+const AMAZON_CHECKED_AT = "2026-08-30" as const;
+type VerifiedAmazonListing = { asin: string; matchBasis: string };
+const verifiedAmazonListings: Readonly<Record<string, VerifiedAmazonListing>> = {
+  "PET-WD01WH": { asin: "B0CQ4TWRGB", matchBasis: "メーカー名と型番 PET-WD01WH の一致を確認" },
+  "PET-WD02WH": { asin: "B0D4QDT8SF", matchBasis: "メーカー名と型番 PET-WD02WH の一致を確認" },
+  "PET-WD03WH": { asin: "B0DF9ZCSDK", matchBasis: "メーカー名と型番 PET-WD03WH の一致を確認" },
+  "JAN 4972547928757": { asin: "B0DVGW3VSB", matchBasis: "メーカー名、商品名、容量1.8Lの一致を確認" },
+  "JAN 4972547928115": { asin: "B0CTZR49TV", matchBasis: "メーカー名、商品名、猫用、容量2.5Lの一致を確認" },
+  "JAN 4972547928139": { asin: "B0CWK6V4P8", matchBasis: "メーカー名、商品名、猫用、容量1.5Lの一致を確認" },
+  "JAN 4972547929105": { asin: "B0GL225P2X", matchBasis: "メーカー名、商品名、猫用、容量950mLの一致を確認" },
+};
+const pendingLink = (merchant: CommerceLink["merchant"]): CommerceLink => ({ merchant, productId: null, destinationUrl: null, affiliateUrl: null, listingVerified: null, listingMatchBasis: null, sellerVerified: null, status: "pending", checkedAt: null });
+const commerceLinks = (listing: VerifiedAmazonListing | null): [CommerceLink, CommerceLink, CommerceLink] => [
+  listing ? { merchant: "amazon", productId: listing.asin, destinationUrl: amazonProductUrl(listing.asin), affiliateUrl: null, listingVerified: true, listingMatchBasis: listing.matchBasis, sellerVerified: null, status: "active", checkedAt: AMAZON_CHECKED_AT } : pendingLink("amazon"),
+  pendingLink("rakuten"),
+  pendingLink("yahoo"),
+];
 const safety = ["損傷したコードは使用しないでください。", "電源を切り、取扱説明書に従ってポンプと本体を清掃してください。", "フィルターや小部品の破損・脱落と誤飲に注意してください。"];
 
 const elecom1 = source("https://www.elecom.co.jp/products/PET-WD01WH.html");
@@ -16,7 +33,10 @@ const well = source("https://product.gex-fp.co.jp/ca/index.php?cid=461&id=2709&m
 const glassy = source("https://product.gex-fp.co.jp/ca/?cid=461&id=2711&m=ProductListDetail");
 const halo = source("https://product.gex-fp.co.jp/ca/?cid=461&id=3205&m=ProductListDetail");
 
-const base = (data: Omit<WaterFountainProduct, "checkedAt" | "asin" | "affiliateUrl" | "commerceLinks" | "safetyNotes">): WaterFountainProduct => ({ ...data, checkedAt: "2026-08-27", asin: null, affiliateUrl: null, commerceLinks: commerceLinks(), safetyNotes: safety });
+const base = (data: Omit<WaterFountainProduct, "checkedAt" | "asin" | "affiliateUrl" | "commerceLinks" | "safetyNotes">): WaterFountainProduct => {
+  const listing = verifiedAmazonListings[data.model] ?? null;
+  return { ...data, checkedAt: "2026-08-27", asin: listing?.asin ?? null, affiliateUrl: null, commerceLinks: commerceLinks(listing), safetyNotes: safety };
+};
 
 export const products: WaterFountainProduct[] = [
   base({ slug: "elecom-pet-wd01wh", productName: "サイレントアクア", manufacturer: "エレコム株式会社", model: "PET-WD01WH", officialUrl: elecom1.url,

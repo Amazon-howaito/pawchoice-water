@@ -17,12 +17,14 @@ export type VerifiedField<T> =
 export type Merchant = "amazon" | "rakuten" | "yahoo";
 export type CommerceLink = {
   merchant: Merchant;
-  productId: null;
-  destinationUrl: null;
+  productId: string | null;
+  destinationUrl: string | null;
   affiliateUrl: null;
-  sellerVerified: null;
-  status: "pending";
-  checkedAt: null;
+  listingVerified: true | null;
+  listingMatchBasis: string | null;
+  sellerVerified: boolean | null;
+  status: "active" | "pending";
+  checkedAt: "2026-08-30" | null;
 };
 
 export type WaterFountainProduct = {
@@ -50,7 +52,7 @@ export type WaterFountainProduct = {
   referencePrice: { label: string; checkedAt: "2026-08-27"; sourceUrl: string } | null;
   officialUrl: string;
   checkedAt: "2026-08-27";
-  asin: null;
+  asin: string | null;
   affiliateUrl: null;
   commerceLinks: [CommerceLink, CommerceLink, CommerceLink];
   safetyNotes: string[];
