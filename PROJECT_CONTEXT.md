@@ -29,7 +29,7 @@
 - Deploy target: Cloudflare Pages（project名は未確認）
 - Framework: Next.js App Router / React / TypeScript / Tailwind CSS
 - Build mode: static export with trailing slash
-- Shared service: Cloudflare Web Analytics beacon installed in root layout; production verification pending
+- Shared service: Cloudflare Web Analytics verified in production and daily analytics
 
 domain、deploy、Cloudflareの現在状態は変更され得る。
 重要作業では実コード、Git、Cloudflareの確認可能な状態を優先する。
