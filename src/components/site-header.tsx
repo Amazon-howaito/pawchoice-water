@@ -7,6 +7,7 @@ const navItems = [
   { href: "/water-fountains", label: "商品を探す" },
   { href: "/water-fountains/compare", label: "比較する" },
   { href: "/water-fountains/guide", label: "選び方" },
+  { href: "/water-fountains/guides", label: "お手入れ" },
   { href: "/water-fountains/faq", label: "FAQ" },
 ];
 

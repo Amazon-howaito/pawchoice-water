@@ -30,6 +30,7 @@
 - Framework: Next.js App Router / React / TypeScript / Tailwind CSS
 - Build mode: static export with trailing slash
 - Shared service: Cloudflare Web Analytics verified in production and daily analytics
+- Search content: `/water-fountains/guides` に既存総合guideを補完する各論3件を実装
 
 domain、deploy、Cloudflareの現在状態は変更され得る。
 重要作業では実コード、Git、Cloudflareの確認可能な状態を優先する。
