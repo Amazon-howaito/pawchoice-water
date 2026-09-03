@@ -36,7 +36,7 @@ export const waterGuides: WaterGuide[] = [
       { href: "/water-fountains/cordless", label: "完全コードレス条件ページ", note: "確認済み商品の判定基準を見る" },
       { href: "/water-fountains/guides/power-outage", label: "停電時の循環式給水器", note: "電源停止後の残水と備えを確認" },
       { href: "/water-fountains/elecom-pet-wd03wh", label: "ELECOM PET-WD03WH", note: "バッテリー内蔵仕様を確認" },
-      { href: "/water-fountains/elecom-pet-wd02wh", label: "ELECOM PET-WD02WH", note: "ワイヤレスポンプと有線給電を確認" },
+      { href: "/water-fountains/guides/placement", label: "給水器の置き場所", note: "電源・床濡れ・動線を一緒に確認" },
     ],
   },
   {
@@ -114,7 +114,7 @@ export const waterGuides: WaterGuide[] = [
     relatedLinks: [
       { href: "/water-fountains", label: "給水器9商品", note: "確認済み容量を商品ごとに見る" },
       { href: "/water-fountains/large-capacity", label: "大容量条件ページ", note: "参加条件と容量の確認状態を見る" },
-      { href: "/water-fountains/gex-purecrystal-well-25-cat", label: "GEX ウェル2.5L", note: "容量・水位・残水の公開仕様" },
+      { href: "/water-fountains/guides/multi-pet", label: "多頭飼い向けの選び方", note: "容量と飲み場所の数を分けて考える" },
       { href: "https://feeder.pawchoice.jp/guides/multi-pet", label: "多頭飼いの食事管理", note: "給水と給餌を別々に計画する" },
     ],
   },
@@ -146,6 +146,85 @@ export const waterGuides: WaterGuide[] = [
       { href: "/water-fountains/elecom-pet-wd03wh", label: "ELECOM PET-WD03WH", note: "バッテリーのメーカー条件値を確認" },
       { href: "/water-fountains/guides/cordless-vs-wireless-pump", label: "電源方式の違い", note: "コードレスとポンプ構造を分けて確認" },
       { href: "https://feeder.pawchoice.jp/guides/power-outage", label: "自動給餌器の停電対策", note: "食事側の予備電源も確認" },
+    ],
+  },
+  {
+    slug: "placement",
+    title: "ペット給水器の置き場所はどこがいい？猫・犬の水飲み場の決め方",
+    description: "ペット給水器の置き場所を、食事・トイレとの位置関係、電源、床濡れ、静音性、多頭飼い、夏場の管理から確認します。",
+    answer: "ペットが落ち着いて近づけ、トイレの汚れや人の動線を避け、電源コードと床濡れを安全に管理できる場所が基本です。食器やトイレからの最適距離は一律に決めず、ペットの様子と住環境に合わせます。",
+    conclusion: "容量やデザインだけでなく、毎日水を交換しやすく、ポンプ音やコードが負担にならず、こぼれた水を早く確認できる場所を選びます。置き場所による健康効果は断定しません。",
+    sections: [
+      {
+        heading: "最初に安全と近づきやすさを確認する",
+        paragraphs: ["給水器が倒れにくい平らな床で、ペットが周囲を確認しながら近づける場所を候補にします。通路の中央、扉の可動範囲、直射日光が長く当たる場所は、接触や水温変化を考えて避けられるか確認します。"],
+        bullets: ["本体が安定する平らな場所", "人やほかのペットに遮られにくい動線", "毎日の補充・交換・清掃がしやすい位置"],
+      },
+      {
+        heading: "食事場所とトイレとの位置関係",
+        paragraphs: ["フード片やトイレ周辺のごみが入りにくい場所を選びます。食器の隣で飲むか、少し離れた場所を好むかには個体差があるため、固定距離を推奨せず、複数候補で飲み方を観察します。水飲み場を移す場合も急にすべて撤去せず、慣れるまで元の器を併用する方法を検討します。"],
+      },
+      {
+        heading: "電源・床濡れ・運転音をまとめて確認する",
+        paragraphs: ["有線式は延長コードを前提にせず、メーカー指定の電源とケーブルが水へ触れにくい位置を選びます。防水マットを使う場合も吸水したまま放置せず、床と本体底面を確認します。現在の掲載商品は静音性の実測条件を確認できていないため、寝室向けと断定しません。"],
+        table: {
+          headers: ["確認項目", "設置時に見ること", "使用後に見ること"],
+          rows: [
+            ["電源", "コンセント、コードの動線", "接点やプラグ周辺の水分"],
+            ["床濡れ", "安定性、受け皿・マット", "こぼれ、結露、床材の変化"],
+            ["運転音", "寝床・生活場所との距離", "水位低下時の音の変化"],
+          ],
+        },
+      },
+      {
+        heading: "多頭飼いと夏場は場所を増やす選択も",
+        paragraphs: ["多頭飼いでは大容量1台だけでなく、互いに邪魔されにくい複数の水飲み場も検討します。夏場も直射日光や高温になる場所を避け、水の状態と減り方をこまめに確認します。必要な水量や交換頻度をPawChoice独自の固定値にはしません。"],
+      },
+    ],
+    relatedLinks: [
+      { href: "/water-fountains", label: "給水器9商品", note: "寸法・電源・容量の確認状態を見る" },
+      { href: "/water-fountains/compare", label: "給水器を比較する", note: "設置に関わる仕様を横並びで確認" },
+      { href: "/water-fountains/guides/cordless-vs-wireless-pump", label: "電源方式の違い", note: "コードレスとワイヤレスポンプを整理" },
+      { href: "/water-fountains/guides/pump-cleaning", label: "ポンプ掃除の確認", note: "移動・分解しやすい場所も考える" },
+    ],
+  },
+  {
+    slug: "multi-pet",
+    title: "多頭飼い向けペット給水器の選び方｜大容量と複数台を比較",
+    description: "多頭飼いのペット給水器を、容量、飲み口、複数設置、清掃頻度、フィルター、停電時の備えから選ぶ方法を解説します。",
+    answer: "多頭飼いでは総飲水量に合う容量だけでなく、同時に近づけるか、飲み場所を複数へ分けるかを確認します。大容量1台が、複数台より常に適するとは限りません。",
+    conclusion: "普段の水の減り方とペット同士の距離を観察し、1台の大容量型か複数の水飲み場かを選びます。容量を日数へ一律換算せず、清掃・フィルター交換・停電時の予備水まで含めて運用を決めましょう。",
+    sections: [
+      {
+        heading: "容量記事との違い",
+        paragraphs: ["容量の選び方ではタンク量と補充頻度を中心に確認します。多頭飼いではそれに加えて、同時利用、横から近づける形状、特定のペットが場所を占有する可能性、複数箇所へ分散する必要性を考えます。"],
+      },
+      {
+        heading: "大容量1台と複数台を比較する",
+        paragraphs: ["設置台数は頭数だけで決めず、生活範囲とペット同士の関係を見て調整します。"],
+        table: {
+          headers: ["構成", "確認しやすい利点", "注意点"],
+          rows: [
+            ["大容量1台", "補充場所をまとめやすい", "同時利用、占有、停止時の代替"],
+            ["同じ部屋に複数台", "飲み口を分けやすい", "電源、清掃、フィルター数"],
+            ["部屋ごとに設置", "生活範囲ごとに近づきやすい", "各台の水位と交換管理"],
+          ],
+        },
+      },
+      {
+        heading: "掲載商品の容量から候補を絞る",
+        paragraphs: ["確認済み容量ではGEX ハローが0.95L、グラッシーRが1.5L、GEX セラモが1.8L、ELECOM WD03とGEX ウェルが2.5Lです。PETKIT P4108は日本公式とGlobal公式の容量表記が異なるため、比較値には使用しません。容量が大きくても多頭向け性能を保証するものではありません。"],
+      },
+      {
+        heading: "清掃・フィルター・停電時の運用",
+        paragraphs: ["飲む頭数が増えると汚れ方や水の減り方も変わるため、固定の清掃間隔ではなく毎日の状態を確認します。交換フィルターの型番、1回に使う枚数、交換目安を公式情報で確認し、費用は最新価格で判断します。循環が止まった場合に備え、別の水皿も用意してください。"],
+      },
+    ],
+    relatedLinks: [
+      { href: "/water-fountains/guides/capacity", label: "給水器容量の選び方", note: "普段の減り方と補充頻度から考える" },
+      { href: "/water-fountains/large-capacity", label: "大容量条件ページ", note: "確認済み容量の参加条件を見る" },
+      { href: "/water-fountains", label: "給水器9商品", note: "容量・飲み口・電源・フィルターを確認" },
+      { href: "https://feeder.pawchoice.jp/guides/multi-pet", label: "多頭飼いの食事管理", note: "給水と給餌を別々に計画する" },
     ],
   },
 ];
