@@ -2,7 +2,7 @@ export type Verification = "verified" | "unknown" | "conflict";
 
 export type FieldSource = {
   url: string;
-  checkedAt: "2026-08-27";
+  checkedAt: "2026-08-27" | "2026-11-23";
   market?: "JP" | "GLOBAL";
   note?: string;
 };
@@ -49,9 +49,9 @@ export type WaterFountainProduct = {
   drinkingLog: VerifiedField<boolean>;
   waterLevelNotification: VerifiedField<string>;
   powerFailureBehavior: VerifiedField<string>;
-  referencePrice: { label: string; checkedAt: "2026-08-27"; sourceUrl: string } | null;
+  referencePrice: { label: string; checkedAt: "2026-08-27" | "2026-11-23"; sourceUrl: string } | null;
   officialUrl: string;
-  checkedAt: "2026-08-27";
+  checkedAt: "2026-08-27" | "2026-11-23";
   asin: string | null;
   affiliateUrl: null;
   commerceLinks: [CommerceLink, CommerceLink, CommerceLink];
